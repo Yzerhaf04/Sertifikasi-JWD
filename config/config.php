@@ -32,7 +32,7 @@ define('APP_VERSION', '1.0');
  */
 // define('IPK_MAHASISWA', 2.90);   // ← ubah ke 2.90 untuk menguji kondisi IPK < 3
 define('IPK_MAHASISWA', 3.40);   // ← ubah ke 3.40 untuk menguji kondisi IPK >= 3
-
+// define('IPK_MAHASISWA', 5.00);  
 // ============================================================
 // KONFIGURASI UPLOAD BERKAS
 // ============================================================ 
