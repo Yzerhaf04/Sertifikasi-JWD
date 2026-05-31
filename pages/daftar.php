@@ -2,6 +2,9 @@
 /**
  * File     : pages/daftar.php
  * Deskripsi: Halaman registrasi beasiswa
+ * Author   : Yzerhaf04
+ * Versi    : 1.0
+ * Tanggal  : 30-05-2026
  * Initial state: form kosong, 
  * Final state  : form terisi, data tersimpan di database, file terupload.
  */
@@ -34,7 +37,7 @@ if (isset($_POST['submit'])) {
     if (!validateEmail($email)) {
         echo "<div class='alert alert-danger'>Format email tidak valid!</div>";
     } elseif (!validatePhone($hp)) {
-        echo "<div class='alert alert-danger'>Format nomor HP tidak valid (harus 8-15 digit angka)!</div>";
+        echo "<div class='alert alert-danger'>Format nomor HP tidak valid (harus 10-12 digit angka)!</div>";
     } else {
         // Proses upload berkas syarat menggunakan fungsi dari function.php
         $file_berkas = uploadBerkas($_FILES['berkas']);

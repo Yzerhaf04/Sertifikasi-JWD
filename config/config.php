@@ -5,7 +5,7 @@
  * Author   : Yzerhaf04
  * Versi    : 1.0
  * Tanggal  : 30-05-2026
- * * Initial state: Belum terhubung ke database
+ * Initial state: Belum terhubung ke database
  * Final state  : Terhubung ke database, konstanta terdefinisi
  */
 
@@ -33,6 +33,9 @@ define('APP_VERSION', '1.0');
 // define('IPK_MAHASISWA', 2.90);   // ← ubah ke 2.90 untuk menguji kondisi IPK < 3
 define('IPK_MAHASISWA', 3.40);   // ← ubah ke 3.40 untuk menguji kondisi IPK >= 3
 
+// ============================================================
+// KONFIGURASI UPLOAD BERKAS
+// ============================================================ 
 define('UPLOAD_DIR', __DIR__ . '/../uploads/');
 define('UPLOAD_MAX_SIZE', 10 * 1024 * 1024); // 10 MB
 define('UPLOAD_ALLOWED_TYPES', ['application/pdf']);

@@ -5,7 +5,6 @@
  * Author   : Yzerhaf04
  * Versi    : 1.0
  * Tanggal  : 30-05-2026
- * 
  * Initial state: data kosong, 
  * Final state  : data terisi, ditampilkan di tabel
  */

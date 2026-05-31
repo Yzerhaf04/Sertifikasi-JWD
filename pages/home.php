@@ -1,5 +1,13 @@
 <?php
-// Pastikan file functions.php sudah di-include di index.php atau panggil di sini jika belum.
+/**
+ * File     : pages/home.php
+ * Deskripsi: Halaman utama aplikasi beasiswa
+ * Author   : Yzerhaf04
+ * Versi    : 1.0
+ * Tanggal  : 30-05-2026
+ * Initial state: tampilan daftar beasiswa
+ * Final state  : tampilan daftar beasiswa dengan opsi pendaftaran
+ */
 // Memanggil fungsi untuk mengambil semua jenis beasiswa dari database
 require_once __DIR__ . '/../includes/function.php';// Sesuaikan path ini dengan letak file functions.php Anda
 
