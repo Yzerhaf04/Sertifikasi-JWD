@@ -11,8 +11,8 @@
     include 'pages/navbar.php'; 
     ?>
     <?php
-    // Memanggil file functions.php untuk menggunakan fungsi-fungsi yang sudah didefinisikan
-    require_once 'includes/functions.php';
+    // Memanggil file function.php untuk menggunakan fungsi-fungsi yang sudah didefinisikan
+    require_once 'includes/function.php';
     ?>
 
     <div class="container">

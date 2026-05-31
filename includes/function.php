@@ -1,12 +1,12 @@
 <?php
 /**
- * File    : function.php
- * Deskripsi: Kumpulan fungsi helper untuk sistem beasiswa
- * Author  : Yzerhaf
- * Versi   : 1.0
+ * File     : function.php
+ * Deskripsi: Kumpulan fungsi untuk sistem beasiswa
+ * Author   : Yzerhaf
+ * Versi    : 1.0
  */
 
-require_once __DIR__ . '/../config.php'; // Sesuaikan path dengan lokasi config.php Anda
+require_once __DIR__ . '/../config/config.php';
 
 // ============================================================
 // FUNGSI KONEKSI DATABASE (PDO)
@@ -43,7 +43,7 @@ function validateEmail(string $email): bool {
 }
 
 function validatePhone(string $phone): bool {
-    return preg_match('/^[0-9]{8,15}$/', $phone) === 1;
+    return preg_match('/^[0-9]{10,12}$/', $phone) === 1;
 }
 
 function sanitize(string $input): string {
@@ -142,9 +142,6 @@ function formatIPK(float $ipk): string {
     return number_format($ipk, 2);
 }
 
-/**
- * Diubah menjadi class Badge dari Bootstrap 5
- */
 function badgeStatus(string $status): string {
     return match($status) {
         'belum di verifikasi' => 'badge bg-warning text-dark',

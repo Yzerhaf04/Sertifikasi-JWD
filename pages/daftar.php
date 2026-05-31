@@ -2,15 +2,13 @@
 /**
  * File     : pages/daftar.php
  * Deskripsi: Halaman registrasi beasiswa
- * * Initial state: form kosong, 
- * Final state  : form terisi, data tersimpan di database menggunakan helper, file terupload.
+ * Initial state: form kosong, 
+ * Final state  : form terisi, data tersimpan di database, file terupload.
  */
 
-// Memanggil file fungsi (pastikan path ini sesuai dengan struktur direktori Anda)
-// config.php tidak perlu dipanggil lagi jika di dalam function.php sudah di-require.
-require_once __DIR__ . '/../function.php'; 
+require_once __DIR__ . '/../includes/function.php'; 
 
-// Menggunakan konstanta IPK dari config.php (bukan IPK_USER lagi)
+// Menggunakan konstanta IPK dari config.php
 $ipk_user = IPK_MAHASISWA;
 
 // Aturan logika form: Jika IPK < 3, seluruh form dinonaktifkan

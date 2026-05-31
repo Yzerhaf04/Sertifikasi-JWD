@@ -1,7 +1,7 @@
 <?php
 // Pastikan file functions.php sudah di-include di index.php atau panggil di sini jika belum.
 // Memanggil fungsi untuk mengambil semua jenis beasiswa dari database
-require_once __DIR__ . '/../functions.php'; // Sesuaikan path ini dengan letak file functions.php Anda
+require_once __DIR__ . '/../includes/function.php';// Sesuaikan path ini dengan letak file functions.php Anda
 
 $jenis_beasiswa = getSemuaJenisBeasiswa();
 ?>

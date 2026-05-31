@@ -9,8 +9,7 @@
  * Initial state: data kosong, 
  * Final state  : data terisi, ditampilkan di tabel
  */
-require 'config/database.php'; 
-/** @var mysqli $conn */
+$pendaftarans = getSemuaPendaftaran();
 ?>
 
 <h2 class="mb-4">Data Hasil Pendaftaran Beasiswa</h2>
@@ -28,23 +27,27 @@ require 'config/database.php';
         </tr>
     </thead>
     <tbody>
-        <?php
-        // Query membaca data untuk ditampilkan
-        // Menampilkan semua elemen yg form ditambah elemen status_ajuan
-        $result = mysqli_query($conn, "SELECT * FROM pendaftaran");
-        
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>
-                <td>{$row['nama']}</td>
-                <td>{$row['email']}</td>
-                <td>{$row['no_hp']}</td>
-                <td>{$row['semester']}</td>
-                <td>{$row['ipk']}</td>
-                <td>{$row['jenis_beasiswa']}</td>
-                <td>{$row['berkas']}</td>
-                <td><span class='badge bg-warning text-dark'>{$row['status_ajuan']}</span></td>
-            </tr>";
-        }
-        ?>
+        <?php if(!empty($pendaftarans)): ?>
+            <?php foreach ($pendaftarans as $row): ?>
+                <tr>
+                    <td><?= htmlspecialchars($row['nama']) ?></td>
+                    <td><?= htmlspecialchars($row['email']) ?></td>
+                    <td><?= htmlspecialchars($row['no_hp']) ?></td>
+                    <td><?= htmlspecialchars($row['semester']) ?></td>
+                    <td><?= formatIPK($row['ipk']) ?></td>
+                    <td><?= htmlspecialchars($row['nama_beasiswa']) ?></td>
+                    <td>
+                        <a href="uploads/<?= htmlspecialchars($row['file_berkas']) ?>" target="_blank" class="btn btn-sm btn-outline-primary">
+                            Lihat Berkas
+                        </a>
+                    </td>
+                    <td><span class='<?= badgeStatus($row['status_ajuan']) ?>'><?= htmlspecialchars($row['status_ajuan']) ?></span></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="8" class="text-center">Belum ada data pendaftaran yang masuk.</td>
+            </tr>
+        <?php endif; ?>
     </tbody>
 </table>
